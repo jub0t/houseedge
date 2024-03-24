@@ -4,6 +4,7 @@ use crate::core;
 pub enum MineItem {
     Reward = 0,
     Loss = 1,
+    Opened = 2,
 }
 
 pub type Mine = MineItem;
@@ -57,4 +58,28 @@ impl MineGame {
 
         Self { columns, risk }
     }
+
+    pub fn eliminate(&mut self, row: usize, column: usize) -> Result<bool, EliminateError> {
+        if let Some(col) = self.columns.get_mut(row) {
+            // Check if the cell has already been opened
+            if let Some(cell) = col.get_mut(column) {
+                if let MineItem::Loss | MineItem::Reward = *cell {
+                    *cell = MineItem::Opened;
+                    Ok(true)
+                } else {
+                    Err(EliminateError::AlreadyOpened)
+                }
+            } else {
+                Err(EliminateError::NullColumn)
+            }
+        } else {
+            Err(EliminateError::NullRow)
+        }
+    }
+}
+
+pub enum EliminateError {
+    AlreadyOpened,
+    NullColumn,
+    NullRow,
 }

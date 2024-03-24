@@ -3,9 +3,15 @@ name = "houseedge"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+# crate-type = ["cdylib"]
 
 [dependencies]
+# napi = { version = "3" }
+# napi-derive = "3"
 rand = "0.8"
 
+[build-dependencies]
+# napi-build = "1"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [workspace]
