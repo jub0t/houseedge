@@ -23,6 +23,45 @@ pub struct Towers {
     pub towers: [Tower; 3],
 }
 
+impl Default for Towers {
+    fn default() -> Self {
+        return Self {
+            towers: [
+                [
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                ],
+                [
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                ],
+                [
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                    TowerItem::Reward,
+                ],
+            ],
+        };
+    }
+}
+
 pub enum TowerDifficulty {
     Easy,
     Medium,
@@ -31,6 +70,6 @@ pub enum TowerDifficulty {
 
 impl Towers {
     pub fn new(difficulty: TowerDifficulty) -> Self {
-        return Self {};
+        return Towers::default();
     }
 }
