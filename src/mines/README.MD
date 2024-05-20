@@ -16,6 +16,12 @@ We need to determine a profit amount for the user in a Mines game such that the 
     P(\text{Reward}) = \frac{36 - 12}{36} = \frac{24}{36} = \frac{2}{3}
   ```
 
+```js
+// Calculate the probability of hitting a reward
+let total_cells = size * size;
+let reward_probability = (total_cells - risk) as f32 / total_cells as f32;
+```
+
 ### 2. Determine the Expected Payout
 - Set the reward such that the expected value (EV) is slightly less than the bet to ensure the house edge.
 - Suppose the base bet amount is \( B \). The reward payout \( R \) needs to be set such that the expected value favors the house.
@@ -27,6 +33,14 @@ We need to determine a profit amount for the user in a Mines game such that the 
   ```math
     P(\text{Loss}) = 1 - P(\text{Reward}) = \frac{1}{3}
   ```
+
+```js
+  // Set the base bet amount
+let base_bet_amount = 10;
+
+// Set the reward payout to ensure a house edge
+let reward_payout = 1.5 * base_bet_amount;
+```
 
 ### 3. Solving for \( R \)
 - Rearrange the inequality to ensure the expected value is less than the bet amount:
