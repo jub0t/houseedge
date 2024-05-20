@@ -7,7 +7,7 @@ pub mod towers;
 
 fn main() {
     let size = 6;
-    let risk = 3;
+    let risk = 6;
 
     let mines = MineGame::new(size, risk);
     println!("{:#?}", mines.columns);
