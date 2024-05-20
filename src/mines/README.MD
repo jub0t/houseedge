@@ -20,9 +20,13 @@ We need to determine a profit amount for the user in a Mines game such that the 
 - Set the reward such that the expected value (EV) is slightly less than the bet to ensure the house edge.
 - Suppose the base bet amount is \( B \). The reward payout \( R \) needs to be set such that the expected value favors the house.
 - The equation for the expected value (EV) of a single cell is:
-  $$ EV = P(\text{Reward}) \times R - P(\text{Loss}) \times B $$
+  ```math
+    EV = P(\text{Reward}) \times R - P(\text{Loss}) \times B
+  ```
   The probability of loss \( P(\text{Loss}) \) is:
-  $$ P(\text{Loss}) = 1 - P(\text{Reward}) = \frac{1}{3} $$
+  ```math
+    P(\text{Loss}) = 1 - P(\text{Reward}) = \frac{1}{3}
+  ```
 
 ### 3. Solving for \( R \)
 - Rearrange the inequality to ensure the expected value is less than the bet amount:
