@@ -22,12 +22,14 @@ We need to determine a profit amount for the user in a Mines game such that the 
 
 ### 3. Solving for \( R \)
 - Rearrange the inequality to ensure the expected value is less than the bet amount:
-  ```math
-$$ \frac{2}{3}R - \frac{1}{3}B < B $$
-  $$ \frac{2}{3}R < B + \frac{1}{3}B $$
-  $$ \frac{2}{3}R < \frac{4}{3}B $$
-  $$ R < 2B $$
+
 ```math
+ \frac{2}{3}R - \frac{1}{3}B < B 
+\frac{2}{3}R < B + \frac{1}{3}B 
+ \frac{2}{3}R < \frac{4}{3}B
+ R < 2B $$
+```
+
 - This means the reward payout \( R \) should be less than twice the base bet amount \( B \).
 
 ### Conclusion
