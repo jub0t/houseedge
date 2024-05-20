@@ -61,6 +61,24 @@ impl MineGame {
             MineItem::Opened => Err(EliminateError::AlreadyOpened),
         }
     }
+
+    /// Returns a string representation of the current game state for display.
+    pub fn display(&self) -> String {
+        let mut display_string = String::new();
+        for row in &self.columns {
+            for &item in row {
+                let symbol = match item {
+                    MineItem::Reward => "R",
+                    MineItem::Loss => "L",
+                    MineItem::Opened => "O",
+                };
+                display_string.push_str(symbol);
+                display_string.push(' '); // Adding space for better readability
+            }
+            display_string.push('\n'); // Newline at the end of each row
+        }
+        display_string
+    }
 }
 
 #[derive(Debug)]
